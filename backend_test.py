@@ -218,8 +218,11 @@ class APITester:
                 if isinstance(data, list):
                     self.log_result("Get Courses (Public)", True, f"Retrieved {len(data)} courses")
                     # Store first course ID for later tests
-                    if data and "id" in data[0]:
-                        self.test_course_id = data[0]["id"]
+                    if data:
+                        # Check both 'id' and '_id' fields
+                        course_id = data[0].get("id") or data[0].get("_id")
+                        if course_id:
+                            self.test_course_id = course_id
                 else:
                     self.log_result("Get Courses (Public)", False, "Response is not a list", response)
             else:
