@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status, Depends
-from ..models import Stats, StatsUpdate
-from ..database import stats_collection
-from ..dependencies import get_current_admin_user
+from models import Stats, StatsUpdate
+from database import stats_collection
+from dependencies import get_current_admin_user
 from bson import ObjectId
 from datetime import datetime
 
