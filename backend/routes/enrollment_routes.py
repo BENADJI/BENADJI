@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from typing import List
-from ..models import Enrollment, EnrollmentCreate, EnrollmentUpdate, EnrollmentWithCourse, Course, User
-from ..database import enrollments_collection, courses_collection
-from ..dependencies import get_current_user
+from models import Enrollment, EnrollmentCreate, EnrollmentUpdate, EnrollmentWithCourse, Course, User
+from database import enrollments_collection, courses_collection
+from dependencies import get_current_user
 from bson import ObjectId
 from datetime import datetime
 
