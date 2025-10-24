@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from typing import List
-from ..models import User, DashboardStats
-from ..database import users_collection, courses_collection, enrollments_collection
-from ..dependencies import get_current_admin_user
+from models import User, DashboardStats
+from database import users_collection, courses_collection, enrollments_collection
+from dependencies import get_current_admin_user
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
