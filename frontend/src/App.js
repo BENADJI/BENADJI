@@ -45,7 +45,14 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/about" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page \u00c0 Propos - Bient\u00f4t disponible</h1></div>} />
             <Route path="/contact" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page Contact - Bient\u00f4t disponible</h1></div>} />
-            <Route path="/admin/courses" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Cours - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+            <Route 
+              path="/admin/courses" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminCourses />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/admin/users" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Utilisateurs - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
             <Route path="/admin/stats" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Statistiques - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
           </Routes>
