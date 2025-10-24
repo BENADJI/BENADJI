@@ -333,8 +333,13 @@ class APITester:
             if response.status_code == 200:
                 data = response.json()
                 if "message" in data and "enrollment" in data:
-                    self.test_enrollment_id = data["enrollment"]["id"]
-                    self.log_result("Enroll in Course", True, f"Successfully enrolled: {data['message']}")
+                    # Check both 'id' and '_id' fields
+                    enrollment_id = data["enrollment"].get("id") or data["enrollment"].get("_id")
+                    if enrollment_id:
+                        self.test_enrollment_id = enrollment_id
+                        self.log_result("Enroll in Course", True, f"Successfully enrolled: {data['message']}")
+                    else:
+                        self.log_result("Enroll in Course", False, f"No enrollment ID found in response: {data['enrollment']}", response)
                 else:
                     self.log_result("Enroll in Course", False, "Invalid enrollment response", response)
             else:
