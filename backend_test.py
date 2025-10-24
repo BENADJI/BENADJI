@@ -7,6 +7,7 @@ Tests all backend endpoints with authentication, validation, and error scenarios
 import requests
 import json
 import os
+import time
 from datetime import datetime
 
 # Get backend URL from frontend .env file
