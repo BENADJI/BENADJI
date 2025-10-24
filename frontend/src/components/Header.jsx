@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X, GraduationCap, User } from 'lucide-react';
 import { Button } from './ui/button';
+import { useAuth } from '../context/AuthContext';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { user, isAdmin, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
@@ -27,6 +35,11 @@ export const Header = () => {
             <Link to="/courses" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
               Cours
             </Link>
+            {isAdmin && (
+              <Link to="/admin/dashboard" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
+                Administration
+              </Link>
+            )}
             <Link to="/about" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
               À Propos
             </Link>
@@ -37,19 +50,37 @@ export const Header = () => {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              onClick={() => navigate('/login')}
-              className="text-gray-700 hover:text-teal-600 hover:bg-teal-50"
-            >
-              Connexion
-            </Button>
-            <Button
-              onClick={() => navigate('/register')}
-              className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
-            >
-              S'inscrire
-            </Button>
+            {user ? (
+              <>
+                <div className="flex items-center space-x-2 text-gray-700">
+                  <User className="w-4 h-4" />
+                  <span className="font-medium">{user.name}</span>
+                </div>
+                <Button
+                  variant="outline"
+                  onClick={handleLogout}
+                  className="text-gray-700 hover:text-red-600 hover:border-red-600"
+                >
+                  Déconnexion
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  onClick={() => navigate('/login')}
+                  className="text-gray-700 hover:text-teal-600 hover:bg-teal-50"
+                >
+                  Connexion
+                </Button>
+                <Button
+                  onClick={() => navigate('/register')}
+                  className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  S'inscrire
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -79,6 +110,15 @@ export const Header = () => {
               >
                 Cours
               </Link>
+              {isAdmin && (
+                <Link
+                  to="/admin/dashboard"
+                  className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Administration
+                </Link>
+              )}
               <Link
                 to="/about"
                 className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
@@ -94,25 +134,43 @@ export const Header = () => {
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    navigate('/login');
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full"
-                >
-                  Connexion
-                </Button>
-                <Button
-                  onClick={() => {
-                    navigate('/register');
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white"
-                >
-                  S'inscrire
-                </Button>
+                {user ? (
+                  <>
+                    <div className="flex items-center space-x-2 text-gray-700 px-4 py-2">
+                      <User className="w-4 h-4" />
+                      <span className="font-medium">{user.name}</span>
+                    </div>
+                    <Button
+                      variant="outline"
+                      onClick={handleLogout}
+                      className="w-full text-red-600 border-red-600"
+                    >
+                      Déconnexion
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        navigate('/login');
+                        setIsMenuOpen(false);
+                      }}
+                      className="w-full"
+                    >
+                      Connexion
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        navigate('/register');
+                        setIsMenuOpen(false);
+                      }}
+                      className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white"
+                    >
+                      S'inscrire
+                    </Button>
+                  </>
+                )}
               </div>
             </nav>
           </div>
