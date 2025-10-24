@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from typing import List
-from ..models import Campus, CampusCreate
-from ..database import campuses_collection
-from ..dependencies import get_current_admin_user
+from models import Campus, CampusCreate
+from database import campuses_collection
+from dependencies import get_current_admin_user
 from bson import ObjectId
 from datetime import datetime
 
