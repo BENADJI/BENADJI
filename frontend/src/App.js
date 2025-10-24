@@ -13,7 +13,10 @@ import { Courses } from "./pages/Courses";
 import { AdminDashboard } from "./pages/AdminDashboard";
 import { AdminCourses } from "./pages/AdminCourses";
 import { AdminUsers } from "./pages/AdminUsers";
+import { AdminUserManagement } from "./pages/AdminUserManagement";
 import { StudentDashboard } from "./pages/StudentDashboard";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
 import { Toaster } from "./components/ui/sonner";
 
 function App() {
