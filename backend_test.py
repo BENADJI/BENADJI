@@ -288,8 +288,10 @@ class APITester:
             
             if response.status_code == 200:
                 data = response.json()
-                if "id" in data and "title" in data:
-                    self.test_course_id = data["id"]  # Update for enrollment tests
+                # Check both 'id' and '_id' fields
+                course_id = data.get("id") or data.get("_id")
+                if course_id and "title" in data:
+                    self.test_course_id = course_id  # Update for enrollment tests
                     self.log_result("Create Course (Admin)", True, f"Created course: {data['title']}")
                 else:
                     self.log_result("Create Course (Admin)", False, "Invalid course data returned", response)
