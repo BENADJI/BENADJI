@@ -20,21 +20,40 @@ class PyObjectId(ObjectId):
         field_schema.update(type="string")
 
 
+class Permissions(BaseModel):
+    manage_courses: bool = False
+    manage_users: bool = False
+    manage_content: bool = False
+    manage_stats: bool = False
+    manage_campus: bool = False
+    view_analytics: bool = False
+    can_delete: bool = False
+
+
 class UserBase(BaseModel):
     name: str
     email: EmailStr
-    role: str = "student"
+    role: str = "student"  # student, admin, super_admin
+    permissions: Optional[Permissions] = None
 
 
 class UserCreate(BaseModel):
     name: str
     email: EmailStr
     password: str
+    role: str = "student"
 
 
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+
+
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    role: Optional[str] = None
+    permissions: Optional[Permissions] = None
 
 
 class User(UserBase):
@@ -151,6 +170,13 @@ class CampusCreate(CampusBase):
     pass
 
 
+class CampusUpdate(BaseModel):
+    name: Optional[str] = None
+    location: Optional[str] = None
+    image: Optional[str] = None
+    description: Optional[str] = None
+
+
 class Campus(CampusBase):
     id: str = Field(alias="_id")
     created_at: datetime = Field(default_factory=datetime.utcnow)
@@ -166,3 +192,24 @@ class DashboardStats(BaseModel):
     total_enrollments: int
     total_students: int
     total_admins: int
+
+
+class ContactMessage(BaseModel):
+    id: str = Field(alias="_id")
+    name: str
+    email: EmailStr
+    subject: str
+    message: str
+    status: str = "new"  # new, read, replied
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+    class Config:
+        populate_by_name = True
+        json_encoders = {ObjectId: str}
+
+
+class ContactMessageCreate(BaseModel):
+    name: str
+    email: EmailStr
+    subject: str
+    message: str
