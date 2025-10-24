@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from typing import List
-from models import Campus, CampusCreate
+from models import Campus, CampusCreate, CampusUpdate
 from database import campuses_collection
 from dependencies import get_current_admin_user
 from bson import ObjectId
@@ -54,3 +54,61 @@ async def create_campus(
     new_campus["_id"] = str(result.inserted_id)
     
     return Campus(**new_campus)
+
+
+@router.put("/{campus_id}", response_model=Campus)
+async def update_campus(
+    campus_id: str,
+    campus_data: CampusUpdate,
+    admin_user = Depends(get_current_admin_user)
+):
+    if not ObjectId.is_valid(campus_id):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid campus ID"
+        )
+    
+    update_data = {k: v for k, v in campus_data.dict().items() if v is not None}
+    
+    if not update_data:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No data to update"
+        )
+    
+    result = await campuses_collection.find_one_and_update(
+        {"_id": ObjectId(campus_id)},
+        {"$set": update_data},
+        return_document=True
+    )
+    
+    if not result:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Campus not found"
+        )
+    
+    result["_id"] = str(result["_id"])
+    return Campus(**result)
+
+
+@router.delete("/{campus_id}")
+async def delete_campus(
+    campus_id: str,
+    admin_user = Depends(get_current_admin_user)
+):
+    if not ObjectId.is_valid(campus_id):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid campus ID"
+        )
+    
+    result = await campuses_collection.delete_one({"_id": ObjectId(campus_id)})
+    
+    if result.deleted_count == 0:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Campus not found"
+        )
+    
+    return {"message": "Campus deleted successfully"}
