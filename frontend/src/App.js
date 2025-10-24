@@ -53,7 +53,14 @@ function App() {
                 </ProtectedRoute>
               } 
             />
-            <Route path="/admin/users" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Utilisateurs - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+            <Route 
+              path="/admin/users" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminUsers />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/admin/stats" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Statistiques - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
           </Routes>
           <Footer />
