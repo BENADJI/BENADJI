@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Users, Monitor, Microscope, Award, UserCheck, Hand, Globe, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, Monitor, Microscope, Award, UserCheck, Hand, Globe } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { mockStats, mockCampuses, mockFeatures } from '../mock';
@@ -61,23 +61,23 @@ export const Landing = () => {
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm uppercase tracking-wider text-teal-600 font-semibold mb-4 animate-in fade-in slide-in-from-top duration-500">
-              Welcome to Oftalmo Academy
+              Bienvenue à l'Académie Oftalmo
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-in fade-in slide-in-from-top duration-700">
-              LET'S LEARN
+              APPRENONS
               <span className="block bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-                TOGETHER
+                ENSEMBLE
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 animate-in fade-in slide-in-from-top duration-900">
-              Become the surgeon you want to be
+              Devenez le chirurgien que vous voulez être
             </p>
             <Button
               onClick={() => navigate('/courses')}
               size="lg"
               className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-in fade-in slide-in-from-bottom duration-1000"
             >
-              CATARACT TRAINING PROGRAM
+              PROGRAMME DE FORMATION EN CATARACTE
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -92,25 +92,25 @@ export const Landing = () => {
               <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-2">
                 {stats.webinarListeners.toLocaleString()}
               </div>
-              <p className="text-gray-600 text-sm sm:text-base">Webinar Listeners</p>
+              <p className="text-gray-600 text-sm sm:text-base">Auditeurs de Webinaires</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-2">
                 {stats.virtualClasses}
               </div>
-              <p className="text-gray-600 text-sm sm:text-base">Virtual Classes</p>
+              <p className="text-gray-600 text-sm sm:text-base">Classes Virtuelles</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-2">
                 {stats.keyOpinionLeaders}
               </div>
-              <p className="text-gray-600 text-sm sm:text-base">Key Opinion Leaders</p>
+              <p className="text-gray-600 text-sm sm:text-base">Leaders d'Opinion Clés</p>
             </div>
             <div className="text-center">
               <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-2">
                 {stats.subscribers.toLocaleString()}
               </div>
-              <p className="text-gray-600 text-sm sm:text-base">Subscribers</p>
+              <p className="text-gray-600 text-sm sm:text-base">Abonnés</p>
             </div>
           </div>
         </div>
@@ -122,16 +122,16 @@ export const Landing = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-sm uppercase tracking-wider text-teal-600 font-semibold mb-4">
-                Our Community
+                Notre Communauté
               </p>
               <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                We are here to help you grow your knowledge
+                Nous sommes là pour vous aider à développer vos connaissances
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                With colleagues in more than 30 countries, Oftalmo Academy is the ophthalmological ecosystem that gives you the space to develop your abilities and skills to the fullest.
+                Avec des collègues dans plus de 30 pays, l'Académie Oftalmo est l'écosystème ophtalmologique qui vous donne l'espace pour développer vos capacités et compétences au maximum.
               </p>
               <p className="text-lg text-gray-600">
-                Find courses, podcasts, articles, and webinars tailored to your needs to start the path to professional excellence today.
+                Trouvez des cours, podcasts, articles et webinaires adaptés à vos besoins pour commencer dès aujourd'hui le chemin vers l'excellence professionnelle.
               </p>
             </div>
             <div className="relative">
@@ -140,7 +140,7 @@ export const Landing = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-6xl font-bold text-teal-600 mb-2">30+</div>
-                    <p className="text-xl text-gray-700">Countries Worldwide</p>
+                    <p className="text-xl text-gray-700">Pays dans le Monde</p>
                   </div>
                 </div>
               </div>
@@ -178,23 +178,23 @@ export const Landing = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm uppercase tracking-wider text-teal-100 font-semibold mb-4">
-              Our Approach
+              Notre Approche
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Hybrid Blended Education
+              Éducation Hybride Mixte
             </h2>
             <p className="text-xl text-teal-50 mb-8">
-              At Oftalmo Academy, we always look to the future.
+              À l'Académie Oftalmo, nous regardons toujours vers l'avenir.
             </p>
             <p className="text-lg text-teal-100 mb-12">
-              That is why we introduce the Hybrid Blended Education Program, the future of ophthalmology teaching, today! Join a new way of learning, with methodology and practices designed to transform you into the ophthalmologist you always wanted to be.
+              C'est pourquoi nous introduisons le Programme d'Éducation Hybride Mixte, l'avenir de l'enseignement en ophtalmologie, aujourd'hui! Rejoignez une nouvelle façon d'apprendre, avec une méthodologie et des pratiques conçues pour vous transformer en l'ophtalmologiste que vous avez toujours voulu être.
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
               {[
-                { label: 'Online Learning', icon: Monitor },
-                { label: 'Hands-On Practice', icon: Hand },
-                { label: 'Expert Mentorship', icon: UserCheck },
+                { label: 'Apprentissage en Ligne', icon: Monitor },
+                { label: 'Pratique Pratique', icon: Hand },
+                { label: 'Mentorat Expert', icon: UserCheck },
                 { label: 'Certification', icon: Award }
               ].map((item, index) => (
                 <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-colors duration-200">
@@ -209,7 +209,7 @@ export const Landing = () => {
               size="lg"
               className="bg-white text-teal-600 hover:bg-teal-50 text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              Explore Programs
+              Explorer les Programmes
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -221,10 +221,10 @@ export const Landing = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Oftalmo Academy's Campuses
+              Les Campus de l'Académie Oftalmo
             </h2>
             <p className="text-xl text-gray-600">
-              World-class facilities in strategic locations
+              Des installations de classe mondiale dans des emplacements stratégiques
             </p>
           </div>
 
@@ -257,20 +257,20 @@ export const Landing = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm uppercase tracking-wider text-amber-100 font-semibold mb-4">
-              Learn Today!
+              Apprenez Aujourd'hui!
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Stop wasting time thinking about how to progress
+              Arrêtez de perdre du temps à réfléchir à comment progresser
             </h2>
             <p className="text-xl text-amber-50 mb-10">
-              Stop dreaming about being a surgeon. Now you can! Start today!
+              Arrêtez de rêver d'être chirurgien. Maintenant vous pouvez! Commencez aujourd'hui!
             </p>
             <Button
               onClick={() => navigate('/courses')}
               size="lg"
               className="bg-white text-orange-600 hover:bg-amber-50 text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              PHACO TRAINING PROGRAM
+              PROGRAMME DE FORMATION PHACO
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>

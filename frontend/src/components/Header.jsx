@@ -16,19 +16,19 @@ export const Header = () => {
             <div className="bg-gradient-to-br from-teal-500 to-cyan-600 p-2 rounded-lg transform group-hover:scale-105 transition-transform duration-200">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">Oftalmo Academy</span>
+            <span className="text-xl font-bold text-gray-900">Académie Oftalmo</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
-              Home
+              Accueil
             </Link>
             <Link to="/courses" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
-              Courses
+              Cours
             </Link>
             <Link to="/about" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
-              About
+              À Propos
             </Link>
             <Link to="/contact" className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium">
               Contact
@@ -42,13 +42,13 @@ export const Header = () => {
               onClick={() => navigate('/login')}
               className="text-gray-700 hover:text-teal-600 hover:bg-teal-50"
             >
-              Login
+              Connexion
             </Button>
             <Button
               onClick={() => navigate('/register')}
               className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
             >
-              Register
+              S'inscrire
             </Button>
           </div>
 
@@ -70,21 +70,21 @@ export const Header = () => {
                 className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Accueil
               </Link>
               <Link
                 to="/courses"
                 className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Courses
+                Cours
               </Link>
               <Link
                 to="/about"
                 className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                À Propos
               </Link>
               <Link
                 to="/contact"
@@ -102,7 +102,7 @@ export const Header = () => {
                   }}
                   className="w-full"
                 >
-                  Login
+                  Connexion
                 </Button>
                 <Button
                   onClick={() => {
@@ -111,7 +111,7 @@ export const Header = () => {
                   }}
                   className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white"
                 >
-                  Register
+                  S'inscrire
                 </Button>
               </div>
             </nav>

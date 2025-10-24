@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 export const WhatsAppChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const whatsappNumber = '525512915514';
-  const message = 'Hi! I need help with Oftalmo Academy courses.';
+  const message = 'Bonjour! J\'ai besoin d\'aide concernant les cours de l\'Académie Oftalmo.';
 
   const handleWhatsAppClick = () => {
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
@@ -19,7 +19,7 @@ export const WhatsAppChat = () => {
         {isOpen && (
           <div className="mb-4 bg-white rounded-lg shadow-2xl p-4 w-72 animate-in slide-in-from-bottom duration-200">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-gray-900">Need Help?</h3>
+              <h3 className="font-semibold text-gray-900">Besoin d'aide?</h3>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
@@ -28,14 +28,14 @@ export const WhatsAppChat = () => {
               </button>
             </div>
             <p className="text-sm text-gray-600 mb-4">
-              Chat with us on WhatsApp. We typically reply in a few minutes.
+              Discutez avec nous sur WhatsApp. Nous répondons généralement en quelques minutes.
             </p>
             <Button
               onClick={handleWhatsAppClick}
               className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white flex items-center justify-center space-x-2"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Start Chat</span>
+              <span>Démarrer la Discussion</span>
             </Button>
           </div>
         )}
