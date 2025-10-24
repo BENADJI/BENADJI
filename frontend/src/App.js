@@ -46,8 +46,16 @@ function App() {
               } 
             />
             <Route path="/courses" element={<Courses />} />
-            <Route path="/about" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page \u00c0 Propos - Bient\u00f4t disponible</h1></div>} />
-            <Route path="/contact" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page Contact - Bient\u00f4t disponible</h1></div>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route 
+              path="/admin/user-management" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminUserManagement />
+                </ProtectedRoute>
+              } 
+            />
             <Route 
               path="/admin/courses" 
               element={
