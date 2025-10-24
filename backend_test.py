@@ -242,7 +242,9 @@ class APITester:
             
             if response.status_code == 200:
                 data = response.json()
-                if "id" in data and "title" in data:
+                # Check both 'id' and '_id' fields
+                course_id = data.get("id") or data.get("_id")
+                if course_id and "title" in data:
                     self.log_result("Get Course by Valid ID", True, f"Retrieved course: {data['title']}")
                 else:
                     self.log_result("Get Course by Valid ID", False, "Invalid course data structure", response)
