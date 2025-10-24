@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends, Query
 from typing import List, Optional
-from ..models import Course, CourseCreate, CourseUpdate
-from ..database import courses_collection
-from ..dependencies import get_current_admin_user
+from models import Course, CourseCreate, CourseUpdate
+from database import courses_collection
+from dependencies import get_current_admin_user
 from bson import ObjectId
 from datetime import datetime
 
