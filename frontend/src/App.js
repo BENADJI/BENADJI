@@ -1,26 +1,46 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { WhatsAppChat } from "./components/WhatsAppChat";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Landing } from "./pages/Landing";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import { AdminDashboard } from "./pages/AdminDashboard";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/courses" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Courses Page - Coming Soon</h1></div>} />
-          <Route path="/about" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">About Page - Coming Soon</h1></div>} />
-          <Route path="/contact" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Contact Page - Coming Soon</h1></div>} />
-          <Route path="/login" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Login Page - Coming Soon</h1></div>} />
-          <Route path="/register" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Register Page - Coming Soon</h1></div>} />
-        </Routes>
-        <Footer />
-        <WhatsAppChat />
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route 
+              path="/admin/dashboard" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route path="/courses" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page Cours - Bient\u00f4t disponible</h1></div>} />
+            <Route path="/about" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page \u00c0 Propos - Bient\u00f4t disponible</h1></div>} />
+            <Route path="/contact" element={<div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Page Contact - Bient\u00f4t disponible</h1></div>} />
+            <Route path="/admin/courses" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Cours - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+            <Route path="/admin/users" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Utilisateurs - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+            <Route path="/admin/stats" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Statistiques - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+          </Routes>
+          <Footer />
+          <WhatsAppChat />
+          <Toaster />
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );
