@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, status, Depends
-from ..models import UserCreate, UserLogin, Token, User
-from ..auth import get_password_hash, verify_password, create_access_token
-from ..database import users_collection
-from ..dependencies import get_current_user
+from models import UserCreate, UserLogin, Token, User
+from auth import get_password_hash, verify_password, create_access_token
+from database import users_collection
+from dependencies import get_current_user
 from bson import ObjectId
 from datetime import datetime
 
