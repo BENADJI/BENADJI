@@ -9,7 +9,11 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { Landing } from "./pages/Landing";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
+import { Courses } from "./pages/Courses";
 import { AdminDashboard } from "./pages/AdminDashboard";
+import { AdminCourses } from "./pages/AdminCourses";
+import { AdminUsers } from "./pages/AdminUsers";
+import { StudentDashboard } from "./pages/StudentDashboard";
 import { Toaster } from "./components/ui/sonner";
 
 function App() {
