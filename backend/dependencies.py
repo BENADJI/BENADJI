@@ -1,7 +1,7 @@
 from fastapi import Depends, HTTPException, status
-from .auth import get_current_user_email
-from .database import users_collection
-from .models import User
+from auth import get_current_user_email
+from database import users_collection
+from models import User
 
 
 async def get_current_user(email: str = Depends(get_current_user_email)) -> User:
