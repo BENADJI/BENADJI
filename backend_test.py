@@ -17,9 +17,10 @@ ADMIN_EMAIL = "admin@academy.oms-dz.com"
 ADMIN_PASSWORD = "admin123"
 
 # Test data
+import time
 TEST_USER_DATA = {
     "name": "Dr. Marie Dubois",
-    "email": "marie.dubois@test-ophtalmo.fr",
+    "email": f"marie.dubois.{int(time.time())}@test-ophtalmo.fr",
     "password": "SecurePass123!"
 }
 
