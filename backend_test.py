@@ -480,7 +480,9 @@ class APITester:
             
             if response.status_code == 200:
                 data = response.json()
-                if "id" in data and "name" in data:
+                # Check both 'id' and '_id' fields
+                campus_id = data.get("id") or data.get("_id")
+                if campus_id and "name" in data:
                     self.log_result("Create Campus (Admin)", True, f"Created campus: {data['name']}")
                 else:
                     self.log_result("Create Campus (Admin)", False, "Invalid campus data returned", response)
