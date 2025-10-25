@@ -61,7 +61,7 @@ export const Landing = () => {
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm uppercase tracking-wider text-teal-600 font-semibold mb-4 animate-in fade-in slide-in-from-top duration-500">
-              Bienvenue à l'Académie Oftalmo
+              Bienvenue à l'Academy OMS
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 animate-in fade-in slide-in-from-top duration-700">
               APPRENONS
@@ -128,7 +128,7 @@ export const Landing = () => {
                 Nous sommes là pour vous aider à développer vos connaissances
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Avec des collègues dans plus de 30 pays, l'Académie Oftalmo est l'écosystème ophtalmologique qui vous donne l'espace pour développer vos capacités et compétences au maximum.
+                Avec des collègues dans plus de 30 pays, l'Academy OMS est l'écosystème ophtalmologique qui vous donne l'espace pour développer vos capacités et compétences au maximum.
               </p>
               <p className="text-lg text-gray-600">
                 Trouvez des cours, podcasts, articles et webinaires adaptés à vos besoins pour commencer dès aujourd'hui le chemin vers l'excellence professionnelle.
@@ -184,7 +184,7 @@ export const Landing = () => {
               Éducation Hybride Mixte
             </h2>
             <p className="text-xl text-teal-50 mb-8">
-              À l'Académie Oftalmo, nous regardons toujours vers l'avenir.
+              À l'Academy OMS, nous regardons toujours vers l'avenir.
             </p>
             <p className="text-lg text-teal-100 mb-12">
               C'est pourquoi nous introduisons le Programme d'Éducation Hybride Mixte, l'avenir de l'enseignement en ophtalmologie, aujourd'hui! Rejoignez une nouvelle façon d'apprendre, avec une méthodologie et des pratiques conçues pour vous transformer en l'ophtalmologiste que vous avez toujours voulu être.
@@ -221,7 +221,7 @@ export const Landing = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Les Campus de l'Académie Oftalmo
+              Les Campus de l'Academy OMS
             </h2>
             <p className="text-xl text-gray-600">
               Des installations de classe mondiale dans des emplacements stratégiques

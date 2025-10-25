@@ -41,7 +41,7 @@ export const Register = () => {
       await register(formData.name, formData.email, formData.password);
       toast({
         title: "Inscription réussie",
-        description: "Bienvenue sur l'Académie Oftalmo",
+        description: "Bienvenue sur l'Academy OMS",
       });
       navigate('/courses');
     } catch (err) {
@@ -71,7 +71,7 @@ export const Register = () => {
             <GraduationCap className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">S'inscrire</h1>
-          <p className="text-gray-600 text-center">Créez votre compte Académie Oftalmo</p>
+          <p className="text-gray-600 text-center">Créez votre compte Academy OMS</p>
         </div>
 
         {error && (

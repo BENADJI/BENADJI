@@ -28,7 +28,7 @@ export const Login = () => {
       await login(formData.email, formData.password);
       toast({
         title: "Connexion réussie",
-        description: "Bienvenue sur l'Académie Oftalmo",
+        description: "Bienvenue sur l'Academy OMS",
       });
       navigate('/admin/dashboard');
     } catch (err) {
@@ -58,7 +58,7 @@ export const Login = () => {
             <GraduationCap className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Connexion</h1>
-          <p className="text-gray-600 text-center">Connectez-vous à votre compte Académie Oftalmo</p>
+          <p className="text-gray-600 text-center">Connectez-vous à votre compte Academy OMS</p>
         </div>
 
         {error && (

@@ -10,7 +10,7 @@ export const About = () => {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">\u00c0 Propos de Nous</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Acad\u00e9mie Oftalmo est un \u00e9cosyst\u00e8me d'apprentissage d\u00e9di\u00e9 \u00e0 l'excellence en ophtalmologie
+            Acad\u00e9mie OMS est un \u00e9cosyst\u00e8me d'apprentissage d\u00e9di\u00e9 \u00e0 l'excellence en ophtalmologie
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Notre Histoire</h2>
             <div className="space-y-4 text-gray-600 text-lg">
               <p>
-                Fond\u00e9e par des leaders d'opinion cl\u00e9s en ophtalmologie, l'Acad\u00e9mie Oftalmo 
+                Fond\u00e9e par des leaders d'opinion cl\u00e9s en ophtalmologie, l'Acad\u00e9mie OMS 
                 est n\u00e9e d'une vision simple : rendre l'\u00e9ducation ophtalmologique de qualit\u00e9 
                 accessible \u00e0 tous les professionnels, o\u00f9 qu'ils se trouvent.
               </p>

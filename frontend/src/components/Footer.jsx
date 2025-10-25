@@ -13,7 +13,7 @@ export const Footer = () => {
               <div className="bg-gradient-to-br from-teal-500 to-cyan-600 p-2 rounded-lg">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white">Académie Oftalmo</span>
+              <span className="text-xl font-bold text-white">Academy OMS</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
               Donner aux ophtalmologistes du monde entier une formation et une éducation de pointe.
@@ -110,7 +110,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Académie Oftalmo. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Academy OMS. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

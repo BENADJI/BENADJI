@@ -1,4 +1,4 @@
-// Données simulées pour l'Académie Oftalmo
+// Données simulées pour l'Academy OMS
 
 export const mockStats = {
   webinarListeners: 2500,
@@ -13,14 +13,14 @@ export const mockCampuses = [
     name: "Campus México",
     location: "Mexico City, Roma",
     image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80",
-    description: "Le campus mexicain de l'Académie Oftalmo, situé dans le quartier de Roma, offre une formation avancée pour les ophtalmologistes, axée sur la chirurgie de la cataracte et d'autres spécialités avec un corps professoral expert et des installations de pointe."
+    description: "Le campus mexicain de l'Academy OMS, situé dans le quartier de Roma, offre une formation avancée pour les ophtalmologistes, axée sur la chirurgie de la cataracte et d'autres spécialités avec un corps professoral expert et des installations de pointe."
   },
   {
     id: 2,
     name: "Campus Europe",
     location: "Barcelone, Espagne",
     image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80",
-    description: "Le campus européen de l'Académie Oftalmo à Barcelone a ouvert ses portes en février 2025 au sein de la prestigieuse installation IMO. Il servira les professionnels d'Europe, d'Afrique du Nord et du Moyen-Orient."
+    description: "Le campus européen de l'Academy OMS à Barcelone a ouvert ses portes en février 2025 au sein de la prestigieuse installation IMO. Il servira les professionnels d'Europe, d'Afrique du Nord et du Moyen-Orient."
   }
 ];
 

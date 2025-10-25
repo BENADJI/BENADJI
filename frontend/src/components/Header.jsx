@@ -24,7 +24,7 @@ export const Header = () => {
             <div className="bg-gradient-to-br from-teal-500 to-cyan-600 p-2 rounded-lg transform group-hover:scale-105 transition-transform duration-200">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">Académie Oftalmo</span>
+            <span className="text-xl font-bold text-gray-900">Academy OMS</span>
           </Link>
 
           {/* Desktop Navigation */}

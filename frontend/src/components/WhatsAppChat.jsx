@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 export const WhatsAppChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const whatsappNumber = '525512915514';
-  const message = 'Bonjour! J\'ai besoin d\'aide concernant les cours de l\'Académie Oftalmo.';
+  const message = 'Bonjour! J\'ai besoin d\'aide concernant les cours de l\'Academy OMS.';
 
   const handleWhatsAppClick = () => {
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
