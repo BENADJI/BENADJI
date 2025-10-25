@@ -175,6 +175,18 @@ export const AdminDashboard = () => {
               </div>
             </div>
           </Card>
+
+          <Card className="p-6 hover:shadow-lg transition-all duration-200 cursor-pointer" onClick={() => navigate('/admin/theme')}>
+            <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-4 rounded-lg">
+                <GraduationCap className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Personnaliser le Thème</h3>
+                <p className="text-sm text-gray-600">Modifier couleurs et contenu</p>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>
