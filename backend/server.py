@@ -13,6 +13,7 @@ from routes.stats_routes import router as stats_router
 from routes.campus_routes import router as campus_router
 from routes.admin_routes import router as admin_router
 from routes.contact_routes import router as contact_router
+from routes.config_routes import router as config_router
 from database import client
 
 ROOT_DIR = Path(__file__).parent
