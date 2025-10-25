@@ -38,6 +38,7 @@ api_router.include_router(stats_router)
 api_router.include_router(campus_router)
 api_router.include_router(admin_router)
 api_router.include_router(contact_router)
+api_router.include_router(config_router)
 
 # Include the api router in the main app
 app.include_router(api_router)
