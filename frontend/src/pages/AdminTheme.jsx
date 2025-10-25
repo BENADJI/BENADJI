@@ -36,27 +36,50 @@ export const AdminTheme = () => {
     loadConfig();
   }, [isAdmin, navigate]);
 
-  const loadConfig = () => {
-    // Charger depuis localStorage pour le moment
-    const saved = localStorage.getItem('siteConfig');
-    if (saved) {
-      setConfig(JSON.parse(saved));
+  const loadConfig = async () => {
+    try {
+      const response = await axios.get(`${BACKEND_URL}/api/config/theme`);
+      if (response.data) {
+        setConfig({
+          siteName: response.data.siteName || 'Academy OMS',
+          siteTagline: response.data.siteTagline || '',
+          primaryColor: response.data.primaryColor || '#14b8a6',
+          secondaryColor: response.data.secondaryColor || '#06b6d4',
+          accentColor: response.data.accentColor || '#f59e0b',
+          logoUrl: response.data.logoUrl || '',
+          heroTitle: response.data.heroTitle || '',
+          heroSubtitle: response.data.heroSubtitle || '',
+          footerText: response.data.footerText || '',
+          contactEmail: response.data.contactEmail || '',
+          contactPhone: response.data.contactPhone || '',
+          whatsappNumber: response.data.whatsappNumber || ''
+        });
+      }
+    } catch (error) {
+      console.error('Error loading config:', error);
     }
   };
 
-  const handleSave = () => {
-    // Sauvegarder dans localStorage
-    localStorage.setItem('siteConfig', JSON.stringify(config));
-    
-    // Appliquer les couleurs CSS
-    document.documentElement.style.setProperty('--primary-color', config.primaryColor);
-    document.documentElement.style.setProperty('--secondary-color', config.secondaryColor);
-    document.documentElement.style.setProperty('--accent-color', config.accentColor);
-    
-    toast({
-      title: "Configuration sauvegardée",
-      description: "Les modifications ont été appliquées. Actualisez la page pour voir tous les changements.",
-    });
+  const handleSave = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      await axios.put(
+        `${BACKEND_URL}/api/config/theme`,
+        config,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      
+      toast({
+        title: "Configuration sauvegardée",
+        description: "Les modifications ont été appliquées avec succès!",
+      });
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: error.response?.data?.detail || "Impossible de sauvegarder",
+      });
+    }
   };
 
   const handleReset = () => {
