@@ -17,6 +17,7 @@ import { AdminUserManagement } from "./pages/AdminUserManagement";
 import { AdminCampus } from "./pages/AdminCampus";
 import { AdminStats } from "./pages/AdminStats";
 import { AdminMessages } from "./pages/AdminMessages";
+import { AdminTheme } from "./pages/AdminTheme";
 import { StudentDashboard } from "./pages/StudentDashboard";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
