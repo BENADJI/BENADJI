@@ -11,7 +11,7 @@ import time
 from datetime import datetime
 
 # Get backend URL from frontend .env file
-BACKEND_URL = "https://ophtha-learn.preview.emergentagent.com/api"
+BACKEND_URL = "https://eyestudyhub.preview.emergentagent.com/api"
 
 # Test credentials
 ADMIN_EMAIL = "admin@academy.oms-dz.com"
