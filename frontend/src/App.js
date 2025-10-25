@@ -75,7 +75,30 @@ function App() {
                 </ProtectedRoute>
               } 
             />
-            <Route path="/admin/stats" element={<ProtectedRoute adminOnly><div className="pt-32 pb-20 px-4 text-center"><h1 className="text-4xl font-bold">Gestion des Statistiques - Bient\u00f4t disponible</h1></div></ProtectedRoute>} />
+            <Route 
+              path="/admin/stats" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminStats />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/campus" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminCampus />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/messages" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminMessages />
+                </ProtectedRoute>
+              } 
+            />
           </Routes>
           <Footer />
           <WhatsAppChat />
