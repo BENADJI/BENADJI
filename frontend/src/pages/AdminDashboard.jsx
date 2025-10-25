@@ -128,14 +128,14 @@ export const AdminDashboard = () => {
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-all duration-200 cursor-pointer" onClick={() => navigate('/admin/users')}>
+          <Card className="p-6 hover:shadow-lg transition-all duration-200 cursor-pointer" onClick={() => navigate('/admin/user-management')}>
             <div className="flex items-center space-x-4">
               <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-4 rounded-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Gérer les Utilisateurs</h3>
-                <p className="text-sm text-gray-600">Voir et gérer tous les utilisateurs</p>
+                <p className="text-sm text-gray-600">Promouvoir, révoquer permissions</p>
               </div>
             </div>
           </Card>
@@ -148,6 +148,30 @@ export const AdminDashboard = () => {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Statistiques du Site</h3>
                 <p className="text-sm text-gray-600">Mettre à jour les statistiques</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-lg transition-all duration-200 cursor-pointer" onClick={() => navigate('/admin/campus')}>
+            <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-br from-orange-500 to-red-600 p-4 rounded-lg">
+                <GraduationCap className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Gérer les Campus</h3>
+                <p className="text-sm text-gray-600">Ajouter et modifier campus</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-lg transition-all duration-200 cursor-pointer" onClick={() => navigate('/admin/messages')}>
+            <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-lg">
+                <GraduationCap className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Messages de Contact</h3>
+                <p className="text-sm text-gray-600">Voir et gérer les messages</p>
               </div>
             </div>
           </Card>
