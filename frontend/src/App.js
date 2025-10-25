@@ -100,6 +100,14 @@ function App() {
                 </ProtectedRoute>
               } 
             />
+            <Route 
+              path="/admin/theme" 
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminTheme />
+                </ProtectedRoute>
+              } 
+            />
           </Routes>
           <Footer />
           <WhatsAppChat />
